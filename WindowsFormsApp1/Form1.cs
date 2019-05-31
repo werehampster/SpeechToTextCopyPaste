@@ -21,10 +21,17 @@ namespace WindowsFormsApp1
         {
             if(e.KeyCode == Keys.Enter)
             {
-                txtInput.SelectionStart = 0;
-                txtInput.SelectionLength = txtInput.Text.Length;
+
                 txtInput.Copy();
             }
+        }
+
+        private void txtInput_TextChanged(object sender, EventArgs e)
+        {
+            //txtInput.SelectionStart = 0;
+            //txtInput.SelectionLength = txtInput.Text.Length;
+            txtInput.SelectAll();
+            
         }
     }
 }
