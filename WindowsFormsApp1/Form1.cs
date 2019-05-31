@@ -27,20 +27,22 @@ namespace WindowsFormsApp1
         {
             if(e.KeyCode == Keys.Enter)
             {
-                object pasteFile = "C:\\Benutzer\\Admin\\Desktop\\test.txt";
+                String pasteFile = @"F:\SpeechToTextCopyPaste\test.txt";
                 String clipboardText = txtInput.Text;
 
-                try
-                {
-                    // empties clipboard and copies string from txtInput to clipboard as ANSI text format
-                    Clipboard.SetText(clipboardText, 0);
-                }
-                // catches hitting enter on an empty textbox
-                catch (ArgumentNullException)
-                {
-                    //empties clipboard so no old data is left
-                    Clipboard.Clear();
-                }
+                //try
+                //{
+                //    // empties clipboard and copies string from txtInput to clipboard as ANSI text format
+                //    Clipboard.SetText(clipboardText, 0);
+                //}
+                //// catches hitting enter on an empty textbox
+                //catch (ArgumentNullException)
+                //{
+                //    //empties clipboard so no old data is left
+                //    Clipboard.Clear();
+                //}
+
+                System.IO.File.WriteAllText(pasteFile, clipboardText);
         }
         }
 
