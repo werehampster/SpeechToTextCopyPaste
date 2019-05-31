@@ -16,5 +16,15 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void txtInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                txtInput.SelectionStart = 0;
+                txtInput.SelectionLength = txtInput.Text.Length;
+                txtInput.Copy();
+            }
+        }
     }
 }
